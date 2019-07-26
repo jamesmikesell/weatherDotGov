@@ -1,9 +1,30 @@
 <!DOCTYPE html>
 <html>
 
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    <style>
+        .container {
+            height: 46vh;
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        .container a {
+            margin: 0;
+        }
+
+        .text {
+            text-align: center;
+        }
+    </style>
+</head>
+
 <body>
 
-    <div id="app"></div>
+    <div id="app" class="container">Loading...</div>
 
     <script>
         //@ts-check
@@ -15,7 +36,7 @@
 
             let url = `http://forecast.weather.gov/MapClick.php?lat=${lat}&lon=${lon}&lg=english&&FcstType=graphical&menu=1`;
 
-            appDiv.innerHTML = `<a href="${url}">${lat} N ${lon} W</a>`;
+            appDiv.innerHTML = `<span class="text">Weather.gov for <br><a href="${url}">${lat} N ${lon} W</a></span>`;
         });
     </script>
 
