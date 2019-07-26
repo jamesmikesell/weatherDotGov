@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <div id="app"></div>
+
+    <script>
+        //@ts-check
+        navigator.geolocation.getCurrentPosition(position => {
+            const appDiv = document.getElementById('app');
+
+            let lat = position.coords.latitude.toFixed(4);
+            let lon = position.coords.longitude.toFixed(4);
+
+            let url = `http://forecast.weather.gov/MapClick.php?lat=${lat}&lon=${lon}&lg=english&&FcstType=graphical&menu=1`;
+
+            appDiv.innerHTML = `<a href="${url}">${lat} N ${lon} W</a>`;
+        });
+    </script>
+
+</body>
+
+</html>
